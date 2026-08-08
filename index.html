@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +7,20 @@
 
 <style>
 
-body{
-    background:#0f1115;
-    color:white;
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
-    font-family:Arial,sans-serif;
+    background:#0f1115;
+    color:white;
+    font-family:Arial, sans-serif;
 }
 
 .container{
@@ -23,17 +28,24 @@ body{
 }
 
 .logo{
-    font-size:60px;
-    letter-spacing:8px;
+    font-size:64px;
+    letter-spacing:10px;
+    margin-bottom:20px;
 }
 
 .subtitle{
-    margin-top:20px;
+    font-size:20px;
     opacity:0.8;
+    margin-bottom:40px;
 }
 
-.text{
-    margin-top:40px;
+.message{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.coming{
+    font-size:18px;
     opacity:0.7;
 }
 
@@ -44,15 +56,19 @@ body{
 
 <div class="container">
 
-<div class="logo">VOTZET</div>
+    <div class="logo">VOTZET</div>
 
-<div class="subtitle">
-THAT'S YOUR WORLD
-</div>
+    <div class="subtitle">
+        THAT'S YOUR WORLD
+    </div>
 
-<div class="text">
-A new world is being built.
-</div>
+    <div class="message">
+        A new world is being built.
+    </div>
+
+    <div class="coming">
+        Coming soon.
+    </div>
 
 </div>
 
