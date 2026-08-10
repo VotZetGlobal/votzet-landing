@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VotZet — That's your world!</title>
+
+<meta
+    name="description"
+    content="VotZet — That's your world!"
+>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    background:#080808;
+    color:#ffffff;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+.screen{
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 20px;
+}
+
+.gold{
+    color:#c9a227;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+#home{
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(201,162,39,0.08),
+            transparent 45%
+        ),
+        #080808;
+}
+
+.hero-title{
+    font-size:clamp(52px,10vw,110px);
+    letter-spacing:4px;
+    margin-bottom:18px;
+}
+
+.hero-slogan{
+    font-size:clamp(18px,3vw,30px);
+    letter-spacing:3px;
+    color:#ffffff;
+    margin-bottom:55px;
+}
+
+.home-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.main-button{
+
+    min-width:190px;
+
+    padding:16px 30px;
+
+    border:1px solid #c9a227;
+    border-radius:40px;
+
+    background:transparent;
+
+    color:#c9a227;
+
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:4px;
+
+    cursor:pointer;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.main-button:hover{
+
+    background:#c9a227;
+    color:#080808;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(201,162,39,.22);
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+
+    font-size:clamp(34px,6vw,64px);
+
+    letter-spacing:3px;
+
+    margin-bottom:15px;
+}
+
+.section-subtitle{
+
+    max-width:650px;
+
+    font-size:17px;
+
+    line-height:1.6;
+
+    opacity:.65;
+
+    margin-bottom:50px;
+}
+
+
+/* =========================
+   WORLDS
+========================= */
+
+.worlds{
+
+    width:100%;
+    max-width:1000px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+}
+
+.world{
+
+    min-height:150px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border:1px solid
+        rgba(201,162,39,.35);
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.01)
+        );
+
+    color:#ffffff;
+
+    font-size:15px;
+
+    letter-spacing:3px;
+
+    cursor:pointer;
+
+    transition:
+        border-color .3s ease,
+        transform .3s ease,
+        background .3s ease;
+}
+
+.world:hover{
+
+    border-color:#c9a227;
+
+    transform:translateY(-5px);
+
+    background:
+        rgba(201,162,39,.06);
+}
+
+
+/* =========================
+   DISCOVER
+========================= */
+
+.documents{
+
+    width:100%;
+    max-width:850px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:15px;
+}
+
+.document{
+
+    padding:25px;
+
+    border:1px solid
+        rgba(255,255,255,.15);
+
+    border-radius:15px;
+
+    color:white;
+
+    letter-spacing:3px;
+
+    transition:
+        border-color .3s ease,
+        color .3s ease;
+}
+
+.document:hover{
+
+    border-color:#c9a227;
+
+    color:#c9a227;
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.back{
+
+    margin-top:50px;
+
+    color:rgba(255,255,255,.5);
+
+    background:none;
+
+    border:none;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    cursor:pointer;
+}
+
+.back:hover{
+    color:#c9a227;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    .worlds{
+        grid-template-columns:1fr;
+    }
+
+    .documents{
+        grid-template-columns:1fr;
+    }
+
+    .home-buttons{
+        flex-direction:column;
+    }
+
+    .main-button{
+        width:220px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section
+    id="home"
+    class="screen"
+>
+
+    <div>
+
+        <h1 class="hero-title">
+            <span class="gold">VotZet</span>
+        </h1>
+
+        <div class="hero-slogan">
+            That's your world!
+        </div>
+
+        <div class="home-buttons">
+
+            <button
+                class="main-button"
+                onclick="showSection('explore')"
+            >
+                EXPLORE
+            </button>
+
+            <button
+                class="main-button"
+                onclick="showSection('discover')"
+            >
+                DISCOVER
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPLORE
+========================= -->
+
+<section
+    id="explore"
+    class="screen"
+    style="display:none;"
+>
+
+    <h2 class="section-title">
+        <span class="gold">Explore</span>
+    </h2>
+
+    <p class="section-subtitle">
+        Choose your world.
+    </p>
+
+
+    <div class="worlds">
+
+        <div class="world">WORLD 01</div>
+
+        <div class="world">WORLD 02</div>
+
+        <div class="world">WORLD 03</div>
+
+        <div class="world">WORLD 04</div>
+
+        <div class="world">WORLD 05</div>
+
+        <div class="world">WORLD 06</div>
+
+        <div class="world">WORLD 07</div>
+
+        <div class="world">WORLD 08</div>
+
+        <div class="world">WORLD 09</div>
+
+    </div>
+
+
+    <button
+        class="back"
+        onclick="showSection('home')"
+    >
+        ← BACK TO HOME
+    </button>
+
+</section>
+
+
+
+<!-- =========================
+     DISCOVER
+========================= -->
+
+<section
+    id="discover"
+    class="screen"
+    style="display:none;"
+>
+
+    <h2 class="section-title">
+        <span class="gold">Discover</span>
+    </h2>
+
+    <p class="section-subtitle">
+        Discover the ideas, principles and philosophy behind VotZet.
+    </p>
+
+
+    <div class="documents">
+
+        <div class="document">
+            MISSION
+        </div>
+
+        <div class="document">
+            MANIFESTO
+        </div>
+
+        <div class="document">
+            PHILOSOPHY
+        </div>
+
+        <div class="document">
+            CONSTITUTION
+        </div>
+
+        <div class="document">
+            CODE
+        </div>
+
+        <div class="document">
+            CODEX
+        </div>
+
+        <div class="document">
+            CANON
+        </div>
+
+    </div>
+
+
+    <button
+        class="back"
+        onclick="showSection('home')"
+    >
+        ← BACK TO HOME
+    </button>
+
+</section>
+
+
+
+<script>
+
+function showSection(sectionId){
+
+    document
+        .getElementById("home")
+        .style.display = "none";
+
+    document
+        .getElementById("explore")
+        .style.display = "none";
+
+    document
+        .getElementById("discover")
+        .style.display = "none";
+
+
+    document
+        .getElementById(sectionId)
+        .style.display = "flex";
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
